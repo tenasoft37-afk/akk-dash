@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import prisma from "../../../../libs/prismadb";
 import { getAkkawiModel, pickData } from "../../../../libs/akkawiModels";
+import { revalidateWebsite } from "../../../../libs/revalidateWebsite";
 
 export async function GET(_request, { params }) {
   const { model, id } = await params;
@@ -41,6 +42,7 @@ export async function PUT(request, { params }) {
       where: { id },
       data,
     });
+    revalidateWebsite();
     return NextResponse.json({ success: true, data: updated });
   } catch (error) {
     console.error("AKKAWI update error:", error);
@@ -63,6 +65,7 @@ export async function DELETE(_request, { params }) {
 
   try {
     await prisma[config.delegate].delete({ where: { id } });
+    revalidateWebsite();
     return NextResponse.json({ success: true, message: "Deleted successfully" });
   } catch (error) {
     console.error("AKKAWI delete error:", error);

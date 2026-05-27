@@ -10,8 +10,6 @@ export default function GalleryCategoriesPage() {
       fields={[
         { key: "order", label: "Order", type: "number" },
         { key: "label", label: "Label" },
-        { key: "slug", label: "Slug" },
-        { key: "href", label: "Link path" },
         { key: "type", label: "Type (residential | commercial)" },
         { key: "cta", label: "CTA text" },
         { key: "image", label: "Image", type: "image", wide: true },

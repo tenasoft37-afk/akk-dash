@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import prisma from "../../../../libs/prismadb";
+import { revalidateWebsite } from "../../../../libs/revalidateWebsite";
 
 /** Batch upsert SiteContent by key */
 export async function POST(request) {
@@ -23,6 +24,7 @@ export async function POST(request) {
       results.push(row);
     }
 
+    revalidateWebsite();
     return NextResponse.json({ success: true, data: results });
   } catch (error) {
     console.error("Batch site content error:", error);

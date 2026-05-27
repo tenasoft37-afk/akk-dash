@@ -1,13 +1,27 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import Link from "next/link";
 import CloudinaryImageField from "./CloudinaryImageField";
+import StringListEditor from "./StringListEditor";
+import PhoneListEditor from "./PhoneListEditor";
+import SocialListEditor from "./SocialListEditor";
+import PillarListEditor from "./PillarListEditor";
+import NavLinksEditor from "./NavLinksEditor";
 
 type FieldDef = {
   key: string;
   label: string;
-  type?: "text" | "textarea" | "image";
+  type?:
+    | "text"
+    | "textarea"
+    | "image"
+    | "video"
+    | "file"
+    | "string-list"
+    | "phone-list"
+    | "social-list"
+    | "pillar-list"
+    | "nav-links";
   wide?: boolean;
   hint?: string;
 };
@@ -16,14 +30,12 @@ type SiteContentSectionFormProps = {
   title: string;
   description?: string;
   fields: FieldDef[];
-  backHref?: string;
 };
 
 export default function SiteContentSectionForm({
   title,
   description,
   fields,
-  backHref = "/dashboard",
 }: SiteContentSectionFormProps) {
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
@@ -54,12 +66,18 @@ export default function SiteContentSectionForm({
     load();
   }, [load]);
 
+  const set = (key: string, val: string) =>
+    setValues((v) => ({ ...v, [key]: val }));
+
   const handleSave = async (e: React.FormEvent) => {
     e.preventDefault();
     setSaving(true);
     setSaved(false);
     try {
-      const items = fields.map((f) => ({ key: f.key, value: values[f.key] ?? "" }));
+      const items = fields.map((f) => ({
+        key: f.key,
+        value: values[f.key] ?? "",
+      }));
       const res = await fetch("/api/akkawi/site-content/batch", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -76,20 +94,78 @@ export default function SiteContentSectionForm({
     }
   };
 
+  const renderField = (f: FieldDef) => {
+    const val = values[f.key] ?? "";
+
+    switch (f.type) {
+      case "image":
+        return (
+          <CloudinaryImageField
+            value={val}
+            onChange={(url) => set(f.key, url)}
+            label={f.label}
+            accept="image"
+          />
+        );
+      case "video":
+        return (
+          <CloudinaryImageField
+            value={val}
+            onChange={(url) => set(f.key, url)}
+            label={f.label}
+            accept="video"
+          />
+        );
+      case "file":
+        return (
+          <CloudinaryImageField
+            value={val}
+            onChange={(url) => set(f.key, url)}
+            label={f.label}
+            accept="any"
+          />
+        );
+      case "string-list":
+        return <StringListEditor value={val} onChange={(j) => set(f.key, j)} />;
+      case "phone-list":
+        return <PhoneListEditor value={val} onChange={(j) => set(f.key, j)} />;
+      case "social-list":
+        return <SocialListEditor value={val} onChange={(j) => set(f.key, j)} />;
+      case "pillar-list":
+        return <PillarListEditor value={val} onChange={(j) => set(f.key, j)} />;
+      case "nav-links":
+        return <NavLinksEditor value={val} onChange={(j) => set(f.key, j)} />;
+      case "textarea":
+        return (
+          <textarea
+            value={val}
+            onChange={(e) => set(f.key, e.target.value)}
+            rows={f.wide ? 6 : 3}
+            className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm"
+          />
+        );
+      default:
+        return (
+          <input
+            type="text"
+            value={val}
+            onChange={(e) => set(f.key, e.target.value)}
+            className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm"
+          />
+        );
+    }
+  };
+
   if (loading) {
     return (
-      <div className="max-w-3xl mx-auto py-12 text-gray-500">Loading page content…</div>
+      <div className="max-w-3xl mx-auto py-12 text-gray-500">
+        Loading page content…
+      </div>
     );
   }
 
   return (
     <div className="max-w-3xl mx-auto pb-12">
-      <Link
-        href={backHref}
-        className="text-sm text-blue-600 hover:underline mb-4 inline-block"
-      >
-        ← Back to dashboard
-      </Link>
       <h1 className="text-2xl font-bold text-gray-900 mb-1">{title}</h1>
       {description && (
         <p className="text-gray-600 text-sm mb-8">{description}</p>
@@ -107,33 +183,7 @@ export default function SiteContentSectionForm({
             {f.hint && (
               <p className="text-xs text-gray-400 mb-1.5">{f.hint}</p>
             )}
-            {f.type === "image" ? (
-              <CloudinaryImageField
-                value={values[f.key] ?? ""}
-                onChange={(url) =>
-                  setValues((v) => ({ ...v, [f.key]: url }))
-                }
-                label={f.label}
-              />
-            ) : f.type === "textarea" ? (
-              <textarea
-                value={values[f.key] ?? ""}
-                onChange={(e) =>
-                  setValues((v) => ({ ...v, [f.key]: e.target.value }))
-                }
-                rows={f.wide ? 6 : 3}
-                className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm font-mono"
-              />
-            ) : (
-              <input
-                type="text"
-                value={values[f.key] ?? ""}
-                onChange={(e) =>
-                  setValues((v) => ({ ...v, [f.key]: e.target.value }))
-                }
-                className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm"
-              />
-            )}
+            {renderField(f)}
           </div>
         ))}
 

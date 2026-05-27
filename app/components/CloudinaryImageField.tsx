@@ -2,13 +2,33 @@
 
 import { useRef, useState } from "react";
 
+type AcceptMode = "image" | "video" | "any";
+
 type Props = {
   value: string;
   onChange: (url: string) => void;
   label?: string;
+  accept?: AcceptMode;
 };
 
-export default function CloudinaryImageField({ value, onChange, label }: Props) {
+const FILE_ACCEPT: Record<AcceptMode, string> = {
+  image: "image/*",
+  video: "video/*",
+  any: "image/*,video/*,application/pdf",
+};
+
+const BUTTON_LABEL: Record<AcceptMode, string> = {
+  image: "Upload image",
+  video: "Upload video",
+  any: "Upload file",
+};
+
+export default function CloudinaryImageField({
+  value,
+  onChange,
+  label,
+  accept = "image",
+}: Props) {
   const [uploading, setUploading] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -25,9 +45,8 @@ export default function CloudinaryImageField({ value, onChange, label }: Props) 
     );
 
     const isVideo = file.type.startsWith("video/");
-    const endpoint = isVideo
-      ? `https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUDNAME}/video/upload`
-      : `https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUDNAME}/image/upload`;
+    const resourceType = isVideo ? "video" : file.type === "application/pdf" ? "raw" : "image";
+    const endpoint = `https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUDNAME}/${resourceType}/upload`;
 
     try {
       const res = await fetch(endpoint, { method: "POST", body: formData });
@@ -45,7 +64,10 @@ export default function CloudinaryImageField({ value, onChange, label }: Props) 
     }
   };
 
-  const isImage = value && /\.(jpg|jpeg|png|gif|webp|svg|avif)(\?|$)/i.test(value);
+  const isImage =
+    value && /\.(jpg|jpeg|png|gif|webp|svg|avif)(\?|$)/i.test(value);
+  const isVideoUrl =
+    value && /\.(mp4|webm|mov|ogg)(\?|$)/i.test(value);
 
   return (
     <div className="space-y-2">
@@ -59,6 +81,22 @@ export default function CloudinaryImageField({ value, onChange, label }: Props) 
         </div>
       )}
 
+      {value && isVideoUrl && (
+        <div className="relative w-full max-w-xs">
+          <video
+            src={value}
+            controls
+            className="w-full h-auto rounded-md border border-gray-200 max-h-40"
+          />
+        </div>
+      )}
+
+      {value && !isImage && !isVideoUrl && (
+        <p className="text-xs text-gray-500 truncate max-w-xs">
+          Current file: {value.split("/").pop()}
+        </p>
+      )}
+
       <div className="flex items-center gap-2">
         <button
           type="button"
@@ -66,7 +104,7 @@ export default function CloudinaryImageField({ value, onChange, label }: Props) 
           onClick={() => inputRef.current?.click()}
           className="inline-flex items-center gap-1.5 bg-indigo-600 text-white px-3 py-1.5 rounded-md text-sm font-medium hover:bg-indigo-700 disabled:opacity-50 shrink-0"
         >
-          {uploading ? "Uploading…" : "Upload image"}
+          {uploading ? "Uploading…" : BUTTON_LABEL[accept]}
         </button>
         {value && (
           <button
@@ -82,18 +120,11 @@ export default function CloudinaryImageField({ value, onChange, label }: Props) 
       <input
         ref={inputRef}
         type="file"
-        accept="image/*"
+        accept={FILE_ACCEPT[accept]}
         onChange={handleUpload}
         className="hidden"
       />
 
-      <input
-        type="text"
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-        placeholder="Or paste image URL"
-        className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm text-gray-500"
-      />
     </div>
   );
 }

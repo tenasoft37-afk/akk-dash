@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import prisma from "../../../libs/prismadb";
 import { getAkkawiModel, pickData } from "../../../libs/akkawiModels";
+import { revalidateWebsite } from "../../../libs/revalidateWebsite";
 
 export async function GET(request, { params }) {
   const config = getAkkawiModel((await params).model);
@@ -59,10 +60,12 @@ export async function POST(request, { params }) {
         create: data,
         update: data,
       });
+      revalidateWebsite();
       return NextResponse.json({ success: true, data: created }, { status: 201 });
     }
 
     const created = await prisma[config.delegate].create({ data });
+    revalidateWebsite();
     return NextResponse.json({ success: true, data: created }, { status: 201 });
   } catch (error) {
     console.error("AKKAWI create error:", error);

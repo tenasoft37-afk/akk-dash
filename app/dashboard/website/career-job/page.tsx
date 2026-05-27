@@ -10,7 +10,7 @@ export default function CareerJobPage() {
       description="The active listing shown on the Careers page. Keep one entry with Active = true."
       fields={[
         { key: "jobTitle", label: "Job title", wide: true },
-        { key: "active", label: "Active (true or false)" },
+        { key: "active", label: "Active", type: "toggle" },
         { key: "content", label: "Full job description", type: "textarea", wide: true },
       ]}
       emptyRow={{ jobTitle: "", active: "true", content: "" }}

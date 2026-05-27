@@ -1,14 +1,13 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import Link from "next/link";
 import { FaPlus, FaTrash } from "react-icons/fa";
 import CloudinaryImageField from "./CloudinaryImageField";
 
 type FieldDef = {
   key: string;
   label: string;
-  type?: "text" | "textarea" | "number" | "image";
+  type?: "text" | "textarea" | "number" | "image" | "toggle";
   wide?: boolean;
 };
 
@@ -47,7 +46,7 @@ export default function AkkawiCrudTable({
     fetchRows();
   }, [fetchRows]);
 
-  const updateRow = (index: number, key: string, value: string | number) => {
+  const updateRow = (index: number, key: string, value: string | number | boolean) => {
     const copy = [...rows];
     copy[index] = { ...copy[index], [key]: value };
     setRows(copy);
@@ -99,12 +98,6 @@ export default function AkkawiCrudTable({
 
   return (
     <div className="max-w-3xl mx-auto pb-12">
-      <Link
-        href="/dashboard"
-        className="text-sm text-blue-600 hover:underline mb-4 inline-block"
-      >
-        ← Back to dashboard
-      </Link>
       <div className="flex flex-wrap items-start justify-between gap-4 mb-6">
         <div>
           <h1 className="text-2xl font-bold text-gray-900">{title}</h1>
@@ -139,7 +132,34 @@ export default function AkkawiCrudTable({
                   <label className="block text-sm font-medium text-gray-700 mb-1">
                     {f.label}
                   </label>
-                  {f.type === "image" ? (
+                  {f.type === "toggle" ? (
+                    <button
+                      type="button"
+                      onClick={() => {
+                        const cur = row[f.key];
+                        const isOn = cur === true || cur === "true";
+                        updateRow(index, f.key, !isOn);
+                      }}
+                      className={`relative inline-flex h-7 w-12 items-center rounded-full transition-colors ${
+                        row[f.key] === true || row[f.key] === "true"
+                          ? "bg-green-500"
+                          : "bg-gray-300"
+                      }`}
+                    >
+                      <span
+                        className={`inline-block h-5 w-5 transform rounded-full bg-white shadow transition-transform ${
+                          row[f.key] === true || row[f.key] === "true"
+                            ? "translate-x-6"
+                            : "translate-x-1"
+                        }`}
+                      />
+                      <span className="ml-14 text-xs text-gray-500 whitespace-nowrap">
+                        {row[f.key] === true || row[f.key] === "true"
+                          ? "Active"
+                          : "Inactive"}
+                      </span>
+                    </button>
+                  ) : f.type === "image" ? (
                     <CloudinaryImageField
                       value={String(row[f.key] ?? "")}
                       onChange={(url) => updateRow(index, f.key, url)}

@@ -12,8 +12,6 @@ export default function GalleryHomePage() {
         { key: "order", label: "Order", type: "number" },
         { key: "type", label: "Type (residential | commercial)" },
         { key: "label", label: "Label" },
-        { key: "slug", label: "Slug" },
-        { key: "href", label: "Link path" },
         { key: "cta", label: "Button text" },
         { key: "image", label: "Image", type: "image", wide: true },
         { key: "desc", label: "Description", type: "textarea", wide: true },
