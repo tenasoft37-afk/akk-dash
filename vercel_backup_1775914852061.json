@@ -1,0 +1,50 @@
+{
+  "hero": [
+    {
+      "Title1": "Bold, Straight, with Motion",
+      "Title2": "End-to-End Procurement & Supply Solutions for NGOs, Enterprises Large-Scale Operations.",
+      "decrption": "From sourcing to delivery, Vanguard provides reliable, cost-effective procurement, logistics, and tender execution services tailored to your operational needs.",
+      "image1": "https://res.cloudinary.com/dp0wyn4dg/image/upload/v1769713791/hero1_mmnqde.webp",
+      "image2": "https://res.cloudinary.com/dp0wyn4dg/image/upload/v1769713797/hero2_z69mko.webp"
+    }
+  ],
+  "features": [
+    {
+      "Title": "WHAT WE DO",
+      "descrption": "We support organizations by delivering efficient, scalable, and competitive procurement and supply solutions.",
+      "card1Title": "Procurement & Tender Support",
+      "card1Descrption": "We manage and participate in public and private tenders with full compliance, competitive pricing, and reliable execution.",
+      "card1Image": "https://res.cloudinary.com/dp0wyn4dg/image/upload/v1769720572/features-home-1_uaj2mp.webp",
+      "card2Title": "Supply & Distribution",
+      "card2Descrption": "From sourcing to final delivery, we handle complete supply chain operations across local and international markets.",
+      "card2Image": "https://res.cloudinary.com/dp0wyn4dg/image/upload/v1769720581/features-home-2_jdcdpp.webp",
+      "card3Title": "Facility & Operational Support",
+      "card3Descrption": "We support businesses with day-to-day operational needs, including maintenance, contracting, and facility services.",
+      "card3Image": "https://res.cloudinary.com/dp0wyn4dg/image/upload/v1769720585/features-home-3_v8loay.webp"
+    }
+  ],
+  "news": [
+    {
+      "card1Title": "We would love to share a similar experience",
+      "card1Date": "10 Nov, 2023",
+      "card1Descrption": "Discover how we’ve helped clients achieve transformative results. Our portfolio showcases innovative projects that combine creativity, strategy, and technology to deliver measurable impact.",
+      "card1Image": "https://res.cloudinary.com/dp0wyn4dg/image/upload/v1769720925/1_vcxgih.webp",
+      "card2Title": "We’re glad to discuss your organization’s needs.",
+      "card2Date": "10 Nov, 2025",
+      "card2Descrption": "Before building anything, we start by understanding you. Through strategic discussions and digital audits, we identify opportunities, define goals, and plan a clear roadmap to success.",
+      "card2Image": "https://res.cloudinary.com/dp0wyn4dg/image/upload/v1769720928/2_o8ipw3.jpg",
+      "card3Title": "In this context our main approach was to build",
+      "card3Date": "10 Nov, 2024",
+      "card3Descrption": "From concept to code, we design and develop modern websites, web apps, and dashboards that are fast, responsive, and tailored to your brand’s identity — built to drive engagement and performance.\n\n",
+      "card3Image": "https://res.cloudinary.com/dp0wyn4dg/image/upload/v1769720932/3_usfydv.webp"
+    }
+  ],
+  "brands": [
+    "https://res.cloudinary.com/dp0wyn4dg/image/upload/v1769721928/h1_-_Copy_ptpl3y.webp",
+    "https://res.cloudinary.com/dp0wyn4dg/image/upload/v1769721930/h2_-_Copy_ko6arg.webp",
+    "https://res.cloudinary.com/dp0wyn4dg/image/upload/v1769721932/h3_aok31h.webp",
+    "https://res.cloudinary.com/dp0wyn4dg/image/upload/v1769721934/h4_-_Copy_px5itp.webp",
+    "https://res.cloudinary.com/dp0wyn4dg/image/upload/v1769721936/h5_-_Copy_nn9ton.webp",
+    "https://res.cloudinary.com/dp0wyn4dg/image/upload/v1769721938/h6_l3fwcf.webp"
+  ]
+}

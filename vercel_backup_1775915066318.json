@@ -1,0 +1,504 @@
+{
+  "hero": {
+    "records": [
+      {
+        "Title1": "Bold, Straight, with Motion",
+        "Title2": "End-to-End Procurement & Supply Solutions for NGOs, Enterprises Large-Scale Operations.",
+        "decrption": "From sourcing to delivery, Vanguard provides reliable, cost-effective procurement, logistics, and tender execution services tailored to your operational needs.",
+        "image1": "https://res.cloudinary.com/dp0wyn4dg/image/upload/v1769713791/hero1_mmnqde.webp",
+        "image2": "https://res.cloudinary.com/dp0wyn4dg/image/upload/v1769713797/hero2_z69mko.webp"
+      }
+    ],
+    "src": {
+      "url": "https://vanguadr-main.vercel.app/api/hero",
+      "model": "hero",
+      "type": "single"
+    }
+  },
+  "features": {
+    "records": [
+      {
+        "Title": "WHAT WE DO",
+        "descrption": "We support organizations by delivering efficient, scalable, and competitive procurement and supply solutions.",
+        "card1Title": "Procurement & Tender Support",
+        "card1Descrption": "We manage and participate in public and private tenders with full compliance, competitive pricing, and reliable execution.",
+        "card1Image": "https://res.cloudinary.com/dp0wyn4dg/image/upload/v1769720572/features-home-1_uaj2mp.webp",
+        "card2Title": "Supply & Distribution",
+        "card2Descrption": "From sourcing to final delivery, we handle complete supply chain operations across local and international markets.",
+        "card2Image": "https://res.cloudinary.com/dp0wyn4dg/image/upload/v1769720581/features-home-2_jdcdpp.webp",
+        "card3Title": "Facility & Operational Support",
+        "card3Descrption": "We support businesses with day-to-day operational needs, including maintenance, contracting, and facility services.",
+        "card3Image": "https://res.cloudinary.com/dp0wyn4dg/image/upload/v1769720585/features-home-3_v8loay.webp"
+      }
+    ],
+    "src": {
+      "url": "https://vanguadr-main.vercel.app/api/features",
+      "model": "features",
+      "type": "single"
+    }
+  },
+  "news": {
+    "records": [
+      {
+        "card1Title": "We would love to share a similar experience",
+        "card1Date": "10 Nov, 2023",
+        "card1Descrption": "Discover how we’ve helped clients achieve transformative results. Our portfolio showcases innovative projects that combine creativity, strategy, and technology to deliver measurable impact.",
+        "card1Image": "https://res.cloudinary.com/dp0wyn4dg/image/upload/v1769720925/1_vcxgih.webp",
+        "card2Title": "We’re glad to discuss your organization’s needs.",
+        "card2Date": "10 Nov, 2025",
+        "card2Descrption": "Before building anything, we start by understanding you. Through strategic discussions and digital audits, we identify opportunities, define goals, and plan a clear roadmap to success.",
+        "card2Image": "https://res.cloudinary.com/dp0wyn4dg/image/upload/v1769720928/2_o8ipw3.jpg",
+        "card3Title": "In this context our main approach was to build",
+        "card3Date": "10 Nov, 2024",
+        "card3Descrption": "From concept to code, we design and develop modern websites, web apps, and dashboards that are fast, responsive, and tailored to your brand’s identity — built to drive engagement and performance.\n\n",
+        "card3Image": "https://res.cloudinary.com/dp0wyn4dg/image/upload/v1769720932/3_usfydv.webp"
+      }
+    ],
+    "src": {
+      "url": "https://vanguadr-main.vercel.app/api/news",
+      "model": "news",
+      "type": "single"
+    }
+  },
+  "brands": {
+    "records": [
+      {
+        "images": {
+          "images": [
+            "https://res.cloudinary.com/dp0wyn4dg/image/upload/v1769721928/h1_-_Copy_ptpl3y.webp",
+            "https://res.cloudinary.com/dp0wyn4dg/image/upload/v1769721930/h2_-_Copy_ko6arg.webp",
+            "https://res.cloudinary.com/dp0wyn4dg/image/upload/v1769721932/h3_aok31h.webp",
+            "https://res.cloudinary.com/dp0wyn4dg/image/upload/v1769721934/h4_-_Copy_px5itp.webp",
+            "https://res.cloudinary.com/dp0wyn4dg/image/upload/v1769721936/h5_-_Copy_nn9ton.webp",
+            "https://res.cloudinary.com/dp0wyn4dg/image/upload/v1769721938/h6_l3fwcf.webp"
+          ]
+        }
+      }
+    ],
+    "src": {
+      "url": "https://vanguadr-main.vercel.app/api/brands",
+      "model": "brands",
+      "type": "brands"
+    }
+  },
+  "aboutUs": {
+    "records": [
+      {
+        "title": "🟦 ABOUT VANGUARD",
+        "description": "Founded in 2015, Vanguard Group has evolved from a family business into a multi-division company delivering procurement, supply, and project management solutions across the Middle East, Europe, Africa, and beyond.\n\nThrough its specialized divisions, Vanguard ensures flexibility, scalability, and efficiency in serving both NGOs and corporate clients.",
+        "items": [
+          "Office Supplies",
+          "Food Parcels & Humanitarian Kits",
+          "Hygiene & Personal Care Products",
+          "IT & Electronics",
+          "Facility & Contracting Services",
+          "Retail & Shops Planning"
+        ],
+        "image": "https://res.cloudinary.com/dp0wyn4dg/image/upload/v1771772443/image_rnungf.webp"
+      }
+    ],
+    "src": {
+      "url": "https://vanguadr-main.vercel.app/api/about1",
+      "model": "aboutUs",
+      "type": "single"
+    }
+  },
+  "featuredServices": {
+    "records": [
+      {
+        "title": "Our Project Management & Execution Philosophy",
+        "description": "Our objective is to provide clients with an assured experience while executing their projects. Our emphasis on clear communication and follow-through procedures ensures that clients objectives are considered our top priority during the planning and execution of all processes under market mentality.",
+        "items": [
+          {
+            "title": "Schedule & Resources",
+            "description": "To create detail schedule and resources plan to meet client’s project objective",
+            "icon": "Settings"
+          },
+          {
+            "title": "Clear Communication",
+            "description": "To communicate clearly with all project stakeholders/Clients",
+            "icon": "TrendingUp"
+          },
+          {
+            "title": "Progress Tracking",
+            "description": "To track project progress and fine-tune deviations",
+            "icon": "BarChart3"
+          },
+          {
+            "title": "Quality Supervision",
+            "description": "To closely supervise the quality of project/products from initiation till completion and receiving",
+            "icon": "Settings"
+          },
+          {
+            "title": "On-Time Delivery",
+            "description": "To complete and deliver the projects/products on time.",
+            "icon": "TrendingUp"
+          }
+        ]
+      }
+    ],
+    "src": {
+      "url": "https://vanguadr-main.vercel.app/api/about2",
+      "model": "featuredServices",
+      "type": "single",
+      "pick": [
+        "title",
+        "image"
+      ]
+    }
+  },
+  "ourSkills": {
+    "records": [
+      {
+        "title": "🟦 INDUSTRIES & CATEGORIES WE SERVE",
+        "description": "We support multiple sectors with tailored solutions:",
+        "items": [
+          "Office & Administrative Supplies",
+          "Humanitarian Aid & Relief Kits",
+          "Hygiene & Personal Care Products",
+          "IT Equipment & Electronics",
+          "Facility Management & Contracting",
+          "Retail Development & Shop Setup"
+        ]
+      }
+    ],
+    "src": {
+      "url": "https://vanguadr-main.vercel.app/api/about3",
+      "model": "ourSkills",
+      "type": "single",
+      "pick": [
+        "title",
+        "description",
+        "image"
+      ]
+    }
+  },
+  "video": {
+    "records": [
+      {
+        "title": "Get Solutions for Your Business",
+        "description": "Empower your organization with data-driven strategies",
+        "video": "https://www.youtube.com/watch?v=qEDP4twRbE0"
+      }
+    ],
+    "src": {
+      "url": "https://vanguadr-main.vercel.app/api/about4",
+      "model": "video",
+      "type": "single",
+      "pick": [
+        "title",
+        "description",
+        "video"
+      ]
+    }
+  },
+  "steps": {
+    "records": [
+      {
+        "title": "HOW IT WORKS",
+        "step1Title": "Needs Assessment",
+        "step1Description": "We analyze your requirements to define the most effective solution.",
+        "step1Image": "",
+        "step2Title": "Strategic Sourcing",
+        "step2Description": "We leverage our global and local supplier network to identify the best options.",
+        "step2Image": "",
+        "step3Title": "Competitive Proposal",
+        "step3Description": "We provide optimized offers aligned with your specifications and budget.",
+        "step3Image": "",
+        "step4Title": "Execution & Delivery",
+        "step4Description": "We manage procurement, logistics, and delivery with full accountability.",
+        "step4Image": "",
+        "step5Title": "",
+        "step5Description": "",
+        "step5Image": "",
+        "step6Title": "",
+        "step6Description": "",
+        "step6Image": ""
+      }
+    ],
+    "src": {
+      "url": "https://vanguadr-main.vercel.app/api/services2",
+      "model": "steps",
+      "type": "single"
+    }
+  },
+  "getInTouch": {
+    "records": [
+      {
+        "locationTitle": "Address",
+        "locationDescription": "Aisha Bakkar Main Road\nAfter ABC Mall, Near Aisha Bakkar Mosque, Trabulsi Center, 1st Floor",
+        "phoneTitle": "Mobile",
+        "phoneDescription": "+961 3 366 888",
+        "emailTitle": "E-mail",
+        "emailDescription": "hsalam@vanguardlb.com"
+      }
+    ],
+    "src": {
+      "url": "https://vanguadr-main.vercel.app/api/footer",
+      "model": "getInTouch",
+      "type": "single"
+    }
+  },
+  "ourServices": {
+    "records": [
+      {
+        "_id": "69c857f6f54f7ff2b248b796",
+        "title": "OUR SERVICES",
+        "card1Title": "Office Supplies",
+        "card1Description": "Office Supplies",
+        "card1Image": "/services1-1.jpg",
+        "card2Title": "Facility Management",
+        "card2Description": "Facility Management",
+        "card2Image": "/services1-2.jpg",
+        "card3Title": "IT Supplies",
+        "card3Description": "IT Supplies",
+        "card3Image": "/services1-3.jpg",
+        "card4Title": "Humanitarian Kits",
+        "card4Description": "Humanitarian Kits",
+        "card4Image": "/services1-4.webp",
+        "card5Title": "Project Management",
+        "card5Description": "End-to-end execution of complex corporate initiatives.",
+        "card5Image": "/about3-image.webp",
+        "card6Title": "Requirement Analysis",
+        "card6Description": "Deep-dive assessment of your operational and technical goals.",
+        "card6Image": "/services3-stats.jpg"
+      },
+      {
+        "_id": "699b143bc929881fb43d6dcd",
+        "title": "Vanguard Divisions",
+        "card1Title": "Humanitarian & NGO Supplies",
+        "card1Description": "We provide complete solutions for humanitarian and relief operations:\n- Food Parcels\n- Dignity Kits\n- Hygiene Kits\n- Winter / Hibernation Kits",
+        "card1Image": "https://res.cloudinary.com/dp0wyn4dg/image/upload/v1771772935/services1-1_yjerfz.webp",
+        "card2Title": "Office & Corporate Supplies",
+        "card2Description": "Supporting daily operations for business and institutions:\n- Office Stationery\n- Workplace Essentials\n- Cleaning & Hygiene Products",
+        "card2Image": "https://res.cloudinary.com/dp0wyn4dg/image/upload/v1771772945/services1-2_twybff.webp",
+        "card3Title": "IT & Electronics",
+        "card3Description": "Reliable technology solutions for modern organizations:\n- Computers & Accessories\n- Networking Equipment\n- Office IT Infrastructure",
+        "card3Image": "https://res.cloudinary.com/dp0wyn4dg/image/upload/v1771772952/services1-3_waz3lz.webp",
+        "card4Title": "Facility Management & Contracting",
+        "card4Description": "Operational support tailored to your business needs:\n- Maintenance Services\n- Contract-Based Operations\n- Facility Support Solutions",
+        "card4Image": "https://res.cloudinary.com/dp0wyn4dg/image/upload/v1771772962/services1-4_pilfsy.webp",
+        "card5Title": "TENDER & PROCUREMENT EXPERTISE",
+        "card5Description": "Vanguard specializes in participating in and executing public and private tenders with precision and reliability.\nWe provide:\n- Tender Application Support\n- Compliance with technical specifications\n- Competitive Pricing Strategies\n- End-to-end procurement and delivery\n\nOur Experience ensures smooth execution from bid submission to final delivery.",
+        "card5Image": "https://res.cloudinary.com/dp0wyn4dg/image/upload/v1771772982/services1-5_arsvjf.webp",
+        "card6Title": "",
+        "card6Description": "",
+        "card6Image": "https://res.cloudinary.com/dp0wyn4dg/image/upload/v1771772976/services1-6_jxpo6k.webp"
+      },
+      {
+        "_id": "699b122dd6a479b1aeda2ba4",
+        "title": "Vanguard Group Divisions",
+        "card1Title": "Vanguard Trading",
+        "card1Description": "Headquartered in Poland and Lebanon, Vanguard Trading is a leading commodity trading house specializing in Food and Non-Food products, exporting to over 33 countries.",
+        "card1Image": "/service1.png",
+        "card2Title": "Vanguard Digital Marketing",
+        "card2Description": "A new generation digital agent aiming to make a difference with performance-oriented next-gen techniques in MENA and GCC regions.",
+        "card2Image": "/service2.png",
+        "card3Title": "Vanguard Consultancy",
+        "card3Description": "Experienced in leading and managing new business projects, business development, operation managing, and ERP specialization since 2015.",
+        "card3Image": "/service3.png",
+        "card4Title": "Project Management",
+        "card4Description": "Leading industrial and commercial projects to professionalism with detailed planning and resource optimization.",
+        "card4Image": "/service4.png",
+        "card5Title": "Global Logistics",
+        "card5Description": "Managing terms of sale, delivery, financing, insurance, and international trade barriers for generic products.",
+        "card5Image": "/service5.png",
+        "card6Title": "Strategic Outsourcing",
+        "card6Description": "Identification of global suppliers with capacity for large volumes at competitive prices and payment assurance.",
+        "card6Image": "/service6.png"
+      },
+      {
+        "_id": "697bcefb002d8d016ad2c1f0",
+        "title": "Service We Provide",
+        "card1Title": "Business Consulting",
+        "card1Description": "We help businesses define clear strategies, streamline operations, and implement growth-driven solutions that align with their long-term goals.",
+        "card1Image": "https://res.cloudinary.com/dp0wyn4dg/image/upload/v1769721515/services1-1_rkf2bz.webp",
+        "card2Title": "Project Management",
+        "card2Description": "Our experienced managers ensure projects stay on schedule, on budget, and aligned with your organization’s objectives through effective planning and execution.",
+        "card2Image": "https://res.cloudinary.com/dp0wyn4dg/image/upload/v1769721521/services1-2_gndoqf.webp",
+        "card3Title": "Requirement Analysis",
+        "card3Description": "We analyze business processes and user needs to outline precise requirements that guide successful project outcomes and eliminate uncertainty.",
+        "card3Image": "https://res.cloudinary.com/dp0wyn4dg/image/upload/v1769721529/services1-3_te3svc.webp",
+        "card4Title": "Business Audit",
+        "card4Description": "Through in-depth performance reviews and data analysis, we uncover inefficiencies, improve compliance, and strengthen overall business health.",
+        "card4Image": "https://res.cloudinary.com/dp0wyn4dg/image/upload/v1769721540/services1-4_yxif6e.webp",
+        "card5Title": "Business Marketing",
+        "card5Description": "We create impactful marketing strategies that elevate your brand, connect with target audiences, and boost your market presence.",
+        "card5Image": "https://res.cloudinary.com/dp0wyn4dg/image/upload/v1769721546/services1-5_abfd41.webp",
+        "card6Title": "Digital Marketing",
+        "card6Description": "Our digital campaigns harness SEO, social media, and analytics tools to build visibility, drive engagement, and accelerate online growth.",
+        "card6Image": "https://res.cloudinary.com/dp0wyn4dg/image/upload/v1769721551/services1-6_uw9cn8.webp"
+      }
+    ],
+    "src": {
+      "url": "https://vanguadr-main.vercel.app/api/proxy/ourservices",
+      "model": "ourServices",
+      "type": "proxy"
+    }
+  },
+  "testmonials": {
+    "records": [
+      {
+        "_id": "69c83e6a9b2ae0bff9ead0ed",
+        "title": "What Our Clients Say",
+        "description": "Trusted by NGOs and enterprises, our clients rely on Vanguard for reliable procurement, competitive pricing, and consistent delivery across every project.",
+        "cards": [
+          {
+            "_id": "69cae359c3f00025cc2f3e17",
+            "comment": "Vanguard managed our hotel rebranding and refurbishment across multiple Gulf properties. Their project coordination, vendor control, and timely delivery exceeded expectations.",
+            "name": "Hussein Salam",
+            "profilePic": "https://images.unsplash.com/photo-1633332755192-727a05c4013d",
+            "role": "CEO, Founder",
+            "testmonialId": "69c83e6a9b2ae0bff9ead0ed"
+          },
+          {
+            "_id": "69cae359c3f00025cc2f3e18",
+            "comment": "They provided turnkey contracting and engineering inputs for our commercial fit-outs in the EU. Quality workmanship and rigorous project oversight throughout the delivery.",
+            "name": "Tarek Sayed",
+            "profilePic": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39",
+            "role": "IT Manager",
+            "testmonialId": "69c83e6a9b2ae0bff9ead0ed"
+          }
+        ]
+      },
+      {
+        "_id": "69c821289b2ae0bff9ead0ea",
+        "title": "We are Very Happy to Get Our Client’s Reviews.#######",
+        "description": "Since 2015 Vanguard has supported re-structuring, re-branding, and openings across the Middle East, EU, Africa and beyond, offering consultancy, contracting, marketing and engineering-led solutions.#####",
+        "cards": [
+          {
+            "_id": "69c83bf49b2ae0bff9ead0ec",
+            "comment": "Vanguard managed our hotel rebranding and refurbishment across multiple Gulf properties. Their project coordination, vendor control, and timely delivery exceeded expectations.",
+            "name": "Hassan Al-Rashid",
+            "profilePic": "https://res.cloudinary.com/dp0wyn4dg/image/upload/v1774723272/photo-1633332755192-727a05c4013d_hry7pv.webp",
+            "role": "Operations Director, Gulf Hotels Group",
+            "testmonialId": "69c821289b2ae0bff9ead0ea"
+          }
+        ]
+      }
+    ],
+    "src": {
+      "url": "https://vanguadr-main.vercel.app/api/proxy/testmonials",
+      "model": "testmonials",
+      "type": "proxy-testmonials"
+    }
+  },
+  "ourTrackRecord": {
+    "records": [
+      {
+        "_id": "69c84fd8f54f7ff2b248b794",
+        "Title1": "🟦 OUR IMPACT",
+        "Title2": "Delivering results across regions and industries",
+        "descrption": "With years of hands-on experience delivering exceptional van conversions and custom builds, our track record speaks for itself. We are proud of every project we have completed and every client relationship we have built.",
+        "C1title": "10,000+",
+        "C1descrption": "Projects Delivered",
+        "C2title": "5,000+ ",
+        "C2descrption": "Clients Served",
+        "C3title": "20+",
+        "C3descrption": "Years of Experience"
+      }
+    ],
+    "src": {
+      "url": "https://vanguadr-main.vercel.app/api/proxy/ourtrackrecord",
+      "model": "ourTrackRecord",
+      "type": "proxy"
+    }
+  },
+  "portfolio": {
+    "records": [],
+    "src": {
+      "url": "https://vanguadr-main.vercel.app/api/proxy/portfolio",
+      "model": "portfolio",
+      "type": "proxy"
+    }
+  },
+  "projects": {
+    "records": [
+      {
+        "_id": "69c8557ef54f7ff2b248b795",
+        "Title": "OUR PROJECTS",
+        "Descrption": "From humanitarian supply chains to institutional support operations, our delivery model is designed for consistency, speed, and accountability.",
+        "C1Title": "Supply of Hygiene Kits for Humanitarian Programs",
+        "C1Descrption": "End-to-end sourcing and distribution of standardized hygiene kits for rapid-response field operations.",
+        "C1Points": [
+          "Large-volume fulfillment",
+          "Multi-location delivery",
+          "Quality-assured packing"
+        ],
+        "C2Title": "Office Supply Contracts for Corporate Clients",
+        "C2Descrption": "Reliable recurring procurement contracts with transparent pricing and service-level accountability.",
+        "C2Points": [
+          "Scheduled replenishment",
+          "Cost optimization",
+          "Vendor consolidation"
+        ],
+        "C3Title": "Procurement and Delivery of IT Equipment",
+        "C3Descrption": "Sourcing, configuration, and logistics support for laptops, accessories, and infrastructure hardware.",
+        "C3Points": [
+          "Verified suppliers",
+          "On-time deployment",
+          "Asset traceability"
+        ],
+        "C4Title": "Facility Support Services for Institutions",
+        "C4Descrption": "Operational support services built for institutional environments with strict process requirements.",
+        "C4Points": [
+          "Compliance-first workflows",
+          "Rapid issue response",
+          "Dedicated support teams"
+        ],
+        "C1Images": [
+          "https://res.cloudinary.com/dp0wyn4dg/image/upload/v1774907215/photo-1633332755192-727a05c4013d_dswcgw.webp"
+        ],
+        "C2Images": [],
+        "C3Images": [],
+        "C4Images": []
+      }
+    ],
+    "src": {
+      "url": "https://vanguadr-main.vercel.app/api/proxy/projects",
+      "model": "projects",
+      "type": "proxy"
+    }
+  },
+  "whoWeServe": {
+    "records": [
+      {
+        "_id": "69c83e6c9b2ae0bff9ead0f1",
+        "description": "We manage procurement, logistics, and delivery with full accountability.",
+        "points": [
+          "NGOs & Humanitarian Organizations",
+          "Banks & Financial Institutions",
+          "Law Firms & Accounting Offices",
+          "Corporate Headquarters",
+          "Large Enterprises"
+        ]
+      }
+    ],
+    "src": {
+      "url": "https://vanguadr-main.vercel.app/api/proxy/whoweserve",
+      "model": "whoWeServe",
+      "type": "proxy"
+    }
+  },
+  "whyChooseVan": {
+    "records": [
+      {
+        "_id": "69c83e6d9b2ae0bff9ead0f2",
+        "title": "WHY CHOOSE VANGUARD",
+        "description": "Excellence in every dimension of our service delivery.",
+        "points": [
+          "Proven expertise in procurement & tender execution",
+          "Competitive and optimized pricing strategies",
+          "Strong local & international supplier network",
+          "Fast, reliable, and scalable delivery",
+          "Tailored solutions for every client"
+        ]
+      }
+    ],
+    "src": {
+      "url": "https://vanguadr-main.vercel.app/api/proxy/whychoosevan",
+      "model": "whyChooseVan",
+      "type": "proxy"
+    }
+  }
+}

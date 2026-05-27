@@ -1,0 +1,208 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+// ─── Hero Section ────────────────────────────────────────────────
+model Hero {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  heading     String
+  subtitle    String
+  highlights  String[]
+  stats       Json     // [{ value: "15+", label: "Years Experience" }]
+  image       String
+  ctaText1    String   @default("Explore Our Services")
+  ctaLink1    String   @default("#services")
+  ctaText2    String   @default("Contact Us")
+  ctaLink2    String   @default("#contact")
+}
+
+// ─── Company Profile (Vision / Mission / Promise) ────────────────
+model CompanyProfile {
+  id           String @id @default(auto()) @map("_id") @db.ObjectId
+  sectionLabel String @default("Company Profile")
+  heading      String @default("Who We Are & Where We're Going.")
+  pillar1Title String @default("Our Vision")
+  pillar1Text  String
+  pillar2Title String @default("Our Mission")
+  pillar2Text  String
+  pillar3Title String @default("Our Promise")
+  pillar3Text  String
+}
+
+// ─── About Section ───────────────────────────────────────────────
+model About {
+  id           String @id @default(auto()) @map("_id") @db.ObjectId
+  sectionLabel String @default("About Us")
+  heading      String @default("NBS — Nexus Business Solutions.")
+  paragraph1   String
+  paragraph2   String
+  paragraph3   String
+  ctaText      String @default("Explore Our Services")
+  ctaLink      String @default("#services")
+  stats        Json   // [{ value: "100+", label: "Projects Delivered" }]
+  image        String
+  videoUrl     String @default("")
+}
+
+// ─── Value Proposition ───────────────────────────────────────────
+model ValueProposition {
+  id           String @id @default(auto()) @map("_id") @db.ObjectId
+  sectionLabel String @default("Our Value Proposition")
+  heading      String @default("Empowering Businesses.")
+  painPoints   Json   // [{ title: "Declining Revenues", desc: "..." }]
+}
+
+// ─── Services (5-step process) ───────────────────────────────────
+model Services {
+  id           String @id @default(auto()) @map("_id") @db.ObjectId
+  sectionLabel String @default("Our Core Services")
+  heading      String @default("Solutions to Transform Your Business.")
+  items        Json   // [{ step: "01", title, shortDesc, desc, image, learnMoreLink }]
+}
+
+// ─── Expertise & Tools ───────────────────────────────────────────
+model Expertise {
+  id              String   @id @default(auto()) @map("_id") @db.ObjectId
+  sectionLabel    String   @default("What We Bring")
+  heading         String   @default("Additional Expertise & Tools.")
+  tools           Json     // [{ label: "Odoo ERP", desc: "..." }]
+  odooHeading     String   @default("Digital Transformation Powered by Odoo.")
+  odooDescription String
+  odooServices    String[]
+}
+
+// ─── Industries ──────────────────────────────────────────────────
+model Industries {
+  id             String   @id @default(auto()) @map("_id") @db.ObjectId
+  sectionLabel   String   @default("Proud Projects")
+  heading        String   @default("Breaking Boundaries, Building Dreams.")
+  subtitle       String
+  spotlightTitle String   @default("FMCG, Beauty & Cosmetics.")
+  spotlightDesc  String
+  spotlightImage String
+  fmcgServices   String[]
+  items          Json     // [{ label, tag, image }]
+}
+
+// ─── Why NBS ─────────────────────────────────────────────────────
+model WhyNBS {
+  id              String @id @default(auto()) @map("_id") @db.ObjectId
+  sectionLabel    String @default("Our Difference")
+  heading         String @default("Why Choose NBS?")
+  differentiators Json   // [{ title, desc }]
+  counters        Json   // [{ value, suffix, label }]
+  bgImage         String @default("")
+}
+
+// ─── Site-wide settings (section visibility, etc.) ─────────────────
+model SiteSettings {
+  id         String @id @default(auto()) @map("_id") @db.ObjectId
+  visibility Json   // { hero: true, companyProfile: true, ... }
+}
+
+// ─── Get Started form submissions ────────────────────────────────
+model LeadSubmission {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  fullName  String
+  email     String
+  phone     String
+  company   String   @default("")
+  message   String   @default("")
+  createdAt DateTime @default(now())
+}
+
+// ─── Contact / Footer ────────────────────────────────────────────
+model ContactSection {
+  id         String @id @default(auto()) @map("_id") @db.ObjectId
+  ctaHeading String @default("Let's Build the Future Together.")
+  ctaText    String
+  ctaButton  String @default("Get Started Now")
+  contacts   Json   // [{ label, value, href }]
+  locations  Json   // [{ name, detail, phone }]
+  footerText String
+}
+
+// ─── AKKAWI Website Models ──────────────────────────────────────
+
+// Testimonials shown on about page
+model Testimonial {
+  id     String @id @default(auto()) @map("_id") @db.ObjectId
+  quote  String
+  author String
+  order  Int    @default(0)
+}
+
+// "Why Choose AKKAWI" features on home page
+model WhyChooseFeature {
+  id    String @id @default(auto()) @map("_id") @db.ObjectId
+  title String
+  desc  String
+  order Int    @default(0)
+}
+
+// Gallery categories (residential / commercial) for home + designs page
+model GalleryCategory {
+  id    String @id @default(auto()) @map("_id") @db.ObjectId
+  label String
+  slug  String @unique
+  href  String
+  image String
+  desc  String @default("")
+  cta   String @default("View more")
+  type  String @default("residential") // "residential" | "commercial"
+  order Int    @default(0)
+}
+
+// Individual gallery images per category slug
+model GalleryImage {
+  id    String @id @default(auto()) @map("_id") @db.ObjectId
+  slug  String // category slug (e.g. "bedrooms", "projects")
+  url   String
+  label String @default("")
+  order Int    @default(0)
+}
+
+// Design service cards on services page
+model DesignService {
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  description String
+  image       String
+  order       Int    @default(0)
+}
+
+// Online design process steps on services page
+model ProcessStep {
+  id    String @id @default(auto()) @map("_id") @db.ObjectId
+  step  String // "Step 1", "Step 2"…
+  text  String
+  order Int    @default(0)
+}
+
+// Contracting services on services page
+model ContractingService {
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  description String
+  order       Int    @default(0)
+}
+
+// Job listings on careers page
+model Career {
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
+  jobTitle String
+  content  String // full job description (multi-line)
+  active   Boolean @default(true)
+}
+
+// Key-value store for miscellaneous site strings
+model SiteContent {
+  id    String @id @default(auto()) @map("_id") @db.ObjectId
+  key   String @unique
+  value String
+}
