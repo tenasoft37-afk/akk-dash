@@ -200,6 +200,14 @@ model Career {
   active   Boolean @default(true)
 }
 
+// Partner brand logos on home page carousel
+model BrandPartner {
+  id    String @id @default(auto()) @map("_id") @db.ObjectId
+  name  String @default("")
+  image String
+  order Int    @default(0)
+}
+
 // Key-value store for miscellaneous site strings
 model SiteContent {
   id    String @id @default(auto()) @map("_id") @db.ObjectId

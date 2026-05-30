@@ -40,6 +40,7 @@ export default function SiteContentSectionForm({
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [saved, setSaved] = useState(false);
+  const [saveMessage, setSaveMessage] = useState("");
   const [values, setValues] = useState<Record<string, string>>({});
 
   const load = useCallback(async () => {
@@ -73,6 +74,7 @@ export default function SiteContentSectionForm({
     e.preventDefault();
     setSaving(true);
     setSaved(false);
+    setSaveMessage("");
     try {
       const items = fields.map((f) => ({
         key: f.key,
@@ -86,7 +88,17 @@ export default function SiteContentSectionForm({
       const json = await res.json();
       if (!json.success) throw new Error(json.error || "Save failed");
       setSaved(true);
-      setTimeout(() => setSaved(false), 3000);
+      if (json.revalidated === false) {
+        setSaveMessage(
+          "Saved to database, but the live website could not be refreshed. Set WEBSITE_URL on the dashboard host to your public site URL."
+        );
+      } else {
+        setSaveMessage("Saved! The website should update within a few seconds.");
+      }
+      setTimeout(() => {
+        setSaved(false);
+        setSaveMessage("");
+      }, 5000);
     } catch (err) {
       alert(err instanceof Error ? err.message : "Save failed");
     } finally {
@@ -195,9 +207,15 @@ export default function SiteContentSectionForm({
           >
             {saving ? "Saving…" : "Save changes"}
           </button>
-          {saved && (
-            <span className="text-green-600 text-sm font-medium">
-              Saved! Website updates within ~1 minute.
+          {saved && saveMessage && (
+            <span
+              className={`text-sm font-medium ${
+                saveMessage.includes("could not")
+                  ? "text-amber-700"
+                  : "text-green-600"
+              }`}
+            >
+              {saveMessage}
             </span>
           )}
         </div>

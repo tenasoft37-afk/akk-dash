@@ -42,7 +42,7 @@ export async function PUT(request, { params }) {
       where: { id },
       data,
     });
-    revalidateWebsite();
+    await revalidateWebsite();
     return NextResponse.json({ success: true, data: updated });
   } catch (error) {
     console.error("AKKAWI update error:", error);
@@ -65,7 +65,7 @@ export async function DELETE(_request, { params }) {
 
   try {
     await prisma[config.delegate].delete({ where: { id } });
-    revalidateWebsite();
+    await revalidateWebsite();
     return NextResponse.json({ success: true, message: "Deleted successfully" });
   } catch (error) {
     console.error("AKKAWI delete error:", error);

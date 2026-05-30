@@ -9,6 +9,7 @@ export const SIDEBAR_NAV = [
     children: [
       { label: "Page content", href: "/dashboard/website/home" },
       { label: "Why Choose cards", href: "/dashboard/website/why-choose" },
+      { label: "Brand partners", href: "/dashboard/website/brand-partners" },
       { label: "Gallery cards", href: "/dashboard/website/gallery-home" },
     ],
   },

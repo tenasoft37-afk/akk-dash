@@ -17,6 +17,8 @@ export const CMS_SECTIONS = [
       { key: "home.why_choose_link", label: "About link text" },
       { key: "home.quote", label: "Quote text", type: "textarea", wide: true },
       { key: "home.quote_author", label: "Quote author" },
+      { key: "home.partners_eyebrow", label: "Partners section eyebrow" },
+      { key: "home.partners_heading", label: "Partners section heading" },
       { key: "home.gallery_cta", label: "Gallery button text" },
       { key: "home.social_heading", label: "Social section title" },
     ],
@@ -135,6 +137,13 @@ export const LIST_SECTIONS = [
     description: "Four feature cards on the home page.",
     path: "/dashboard/website/why-choose",
     apiPath: "/api/akkawi/why-choose",
+  },
+  {
+    id: "brand-partners",
+    title: "Brand partners",
+    description: "Partner logo carousel on the home page.",
+    path: "/dashboard/website/brand-partners",
+    apiPath: "/api/akkawi/brand-partners",
   },
   {
     id: "testimonials",

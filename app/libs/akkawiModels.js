@@ -48,6 +48,12 @@ export const AKKAWI_MODELS = {
     required: ["jobTitle", "content"],
     fields: ["jobTitle", "content", "active"],
   },
+  "brand-partners": {
+    delegate: "brandPartner",
+    orderBy: { order: "asc" },
+    required: ["image"],
+    fields: ["name", "image", "order"],
+  },
   "site-content": {
     delegate: "siteContent",
     orderBy: { key: "asc" },

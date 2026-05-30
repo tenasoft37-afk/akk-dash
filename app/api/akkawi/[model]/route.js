@@ -60,12 +60,12 @@ export async function POST(request, { params }) {
         create: data,
         update: data,
       });
-      revalidateWebsite();
+      await revalidateWebsite();
       return NextResponse.json({ success: true, data: created }, { status: 201 });
     }
 
     const created = await prisma[config.delegate].create({ data });
-    revalidateWebsite();
+    await revalidateWebsite();
     return NextResponse.json({ success: true, data: created }, { status: 201 });
   } catch (error) {
     console.error("AKKAWI create error:", error);

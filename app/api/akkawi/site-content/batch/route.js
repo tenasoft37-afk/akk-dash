@@ -24,8 +24,13 @@ export async function POST(request) {
       results.push(row);
     }
 
-    revalidateWebsite();
-    return NextResponse.json({ success: true, data: results });
+    const revalidated = await revalidateWebsite();
+    return NextResponse.json({
+      success: true,
+      data: results,
+      revalidated: revalidated.ok,
+      revalidateError: revalidated.error,
+    });
   } catch (error) {
     console.error("Batch site content error:", error);
     return NextResponse.json(
