@@ -11,6 +11,7 @@ import {
   FaCog,
   FaBars,
   FaTimes,
+  FaSignOutAlt,
 } from "react-icons/fa";
 
 interface UserResponse {
@@ -104,8 +105,20 @@ export default function DashboardLayout({
 }) {
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [loggingOut, setLoggingOut] = useState(false);
   const { push } = useRouter();
   const pathname = usePathname();
+
+  const handleLogout = async () => {
+    setLoggingOut(true);
+    try {
+      await axios.post("/api/auth/logout");
+    } catch {
+      // Still redirect — cookie may already be cleared
+    } finally {
+      push("/");
+    }
+  };
 
   useEffect(() => {
     (async () => {
@@ -155,7 +168,7 @@ export default function DashboardLayout({
 
       {/* Sidebar */}
       <aside
-        className={`fixed z-40 top-0 left-0 h-full w-60 bg-white border-r border-gray-200 overflow-y-auto transition-transform lg:translate-x-0 lg:static lg:z-auto ${
+        className={`fixed z-40 top-0 left-0 h-full w-60 bg-white border-r border-gray-200 overflow-y-auto transition-transform lg:translate-x-0 lg:static lg:z-auto flex flex-col ${
           mobileOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
@@ -168,7 +181,7 @@ export default function DashboardLayout({
           </Link>
         </div>
 
-        <nav className="p-3 space-y-1">
+        <nav className="p-3 space-y-1 flex-1">
           {SIDEBAR_NAV.map((item) => (
             <SidebarItem
               key={item.label}
@@ -178,6 +191,18 @@ export default function DashboardLayout({
             />
           ))}
         </nav>
+
+        <div className="p-3 border-t border-gray-100">
+          <button
+            type="button"
+            onClick={handleLogout}
+            disabled={loggingOut}
+            className="flex w-full items-center gap-2 px-3 py-2.5 text-sm font-semibold rounded-md text-gray-600 hover:bg-gray-100 hover:text-gray-900 transition-colors disabled:opacity-50"
+          >
+            <FaSignOutAlt size={13} className="text-gray-400" />
+            {loggingOut ? "Logging out…" : "Logout"}
+          </button>
+        </div>
       </aside>
 
       {/* Main content */}

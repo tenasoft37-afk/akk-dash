@@ -38,7 +38,7 @@ export default function Home() {
       <div className="flex justify-center mb-6">
         <div className="rounded-2xl bg-white shadow-[0_10px_30px_rgba(255,255,255,0.2)] ring-1 ring-white/70 p-3">
           <Image
-            src="/logoo.png"
+            src="/logo.png"
             alt="Logo"
             width={180}
             height={180}
@@ -89,7 +89,7 @@ export default function Home() {
       </div>
 
       <div className="mt-6 text-center text-xs text-white/50">
-        <span>© {new Date().getFullYear()} Nexus Business Solutions</span>
+        <span>© {new Date().getFullYear()} Akkawi Design & Build</span>
       </div>
     </div>
   </section>

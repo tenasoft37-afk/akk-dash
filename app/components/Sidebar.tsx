@@ -32,7 +32,11 @@ export default function Sidebar() {
   };
 
   const handleLogout = async () => {
-    document.cookie = "OurSiteJWT=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    try {
+      await fetch("/api/auth/logout", { method: "POST" });
+    } catch {
+      // Still redirect
+    }
     router.push("/");
   };
 
